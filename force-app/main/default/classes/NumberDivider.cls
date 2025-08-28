@@ -1,5 +1,5 @@
 /**
- * @description Apex class to perform division operations on two numbers
+ * @description Apex class to perform mathematical operations (division and addition) on two numbers
  * @author Auto-generated
  * @date Today
  */
@@ -58,5 +58,69 @@ public with sharing class NumberDivider {
             return null;
         }
         return dividend / divisor;
+    }
+    
+    // ADDITION METHODS
+    
+    /**
+     * @description Adds two decimal numbers
+     * @param addend1 The first number to add
+     * @param addend2 The second number to add
+     * @return Decimal The sum of the two numbers
+     */
+    public static Decimal add(Decimal addend1, Decimal addend2) {
+        return addend1 + addend2;
+    }
+    
+    /**
+     * @description Adds two integer numbers and returns decimal result
+     * @param addend1 The first number to add
+     * @param addend2 The second number to add
+     * @return Decimal The sum of the two numbers
+     */
+    public static Decimal add(Integer addend1, Integer addend2) {
+        return Decimal.valueOf(addend1) + Decimal.valueOf(addend2);
+    }
+    
+    /**
+     * @description Adds two double numbers
+     * @param addend1 The first number to add
+     * @param addend2 The second number to add
+     * @return Double The sum of the two numbers
+     */
+    public static Double add(Double addend1, Double addend2) {
+        return addend1 + addend2;
+    }
+    
+    /**
+     * @description Safely adds two numbers with null checking
+     * @param addend1 The first number to add
+     * @param addend2 The second number to add
+     * @return Decimal The sum of the two numbers, or null if any input is null
+     */
+    public static Decimal safeAdd(Decimal addend1, Decimal addend2) {
+        if (addend1 == null || addend2 == null) {
+            return null;
+        }
+        return addend1 + addend2;
+    }
+    
+    /**
+     * @description Adds multiple decimal numbers using variable arguments
+     * @param numbers Variable number of decimal arguments to add
+     * @return Decimal The sum of all numbers, or 0 if no arguments provided
+     */
+    public static Decimal addMultiple(Decimal... numbers) {
+        if (numbers == null || numbers.isEmpty()) {
+            return 0;
+        }
+        
+        Decimal sum = 0;
+        for (Decimal num : numbers) {
+            if (num != null) {
+                sum += num;
+            }
+        }
+        return sum;
     }
 }
