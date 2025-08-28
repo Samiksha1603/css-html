@@ -92,4 +92,126 @@ public class IntegerCalculatorTest {
         // Verify
         System.assertEquals(expectedResult, actualResult, 'Instance add method should return correct sum');
     }
+    
+    // ========== SUBTRACTION TESTS ==========
+    
+    /**
+     * Test the static subtractTwoIntegers method with positive numbers
+     */
+    @isTest
+    static void testSubtractTwoPositiveIntegers() {
+        // Test data
+        Integer firstNumber = 15;
+        Integer secondNumber = 5;
+        Integer expectedResult = 10;
+        
+        // Execute
+        Integer actualResult = IntegerCalculator.subtractTwoIntegers(firstNumber, secondNumber);
+        
+        // Verify
+        System.assertEquals(expectedResult, actualResult, 'Subtraction of two positive integers should return correct difference');
+    }
+    
+    /**
+     * Test the static subtractTwoIntegers method with negative numbers
+     */
+    @isTest
+    static void testSubtractTwoNegativeIntegers() {
+        // Test data
+        Integer firstNumber = -5;
+        Integer secondNumber = -10;
+        Integer expectedResult = 5; // -5 - (-10) = -5 + 10 = 5
+        
+        // Execute
+        Integer actualResult = IntegerCalculator.subtractTwoIntegers(firstNumber, secondNumber);
+        
+        // Verify
+        System.assertEquals(expectedResult, actualResult, 'Subtraction of two negative integers should return correct difference');
+    }
+    
+    /**
+     * Test the static subtractTwoIntegers method with mixed positive and negative numbers
+     */
+    @isTest
+    static void testSubtractMixedIntegers() {
+        // Test data
+        Integer firstNumber = 10;
+        Integer secondNumber = -3;
+        Integer expectedResult = 13; // 10 - (-3) = 10 + 3 = 13
+        
+        // Execute
+        Integer actualResult = IntegerCalculator.subtractTwoIntegers(firstNumber, secondNumber);
+        
+        // Verify
+        System.assertEquals(expectedResult, actualResult, 'Subtraction of positive and negative integers should return correct difference');
+    }
+    
+    /**
+     * Test the static subtractTwoIntegers method with zero
+     */
+    @isTest
+    static void testSubtractWithZero() {
+        // Test data
+        Integer firstNumber = 42;
+        Integer secondNumber = 0;
+        Integer expectedResult = 42;
+        
+        // Execute
+        Integer actualResult = IntegerCalculator.subtractTwoIntegers(firstNumber, secondNumber);
+        
+        // Verify
+        System.assertEquals(expectedResult, actualResult, 'Subtraction with zero should return the first number');
+    }
+    
+    /**
+     * Test the static subtractTwoIntegers method subtracting from zero
+     */
+    @isTest
+    static void testSubtractFromZero() {
+        // Test data
+        Integer firstNumber = 0;
+        Integer secondNumber = 25;
+        Integer expectedResult = -25;
+        
+        // Execute
+        Integer actualResult = IntegerCalculator.subtractTwoIntegers(firstNumber, secondNumber);
+        
+        // Verify
+        System.assertEquals(expectedResult, actualResult, 'Subtracting from zero should return negative of the second number');
+    }
+    
+    /**
+     * Test the instance subtract method
+     */
+    @isTest
+    static void testInstanceSubtractMethod() {
+        // Test data
+        Integer firstNumber = 50;
+        Integer secondNumber = 8;
+        Integer expectedResult = 42;
+        
+        // Execute
+        IntegerCalculator calculator = new IntegerCalculator();
+        Integer actualResult = calculator.subtract(firstNumber, secondNumber);
+        
+        // Verify
+        System.assertEquals(expectedResult, actualResult, 'Instance subtract method should return correct difference');
+    }
+    
+    /**
+     * Test subtraction that results in negative number
+     */
+    @isTest
+    static void testSubtractionResultingInNegative() {
+        // Test data
+        Integer firstNumber = 5;
+        Integer secondNumber = 12;
+        Integer expectedResult = -7;
+        
+        // Execute
+        Integer actualResult = IntegerCalculator.subtractTwoIntegers(firstNumber, secondNumber);
+        
+        // Verify
+        System.assertEquals(expectedResult, actualResult, 'Subtraction that results in negative should return correct negative difference');
+    }
 }

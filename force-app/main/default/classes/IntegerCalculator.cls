@@ -27,4 +27,26 @@ public class IntegerCalculator {
     public Integer add(Integer firstNumber, Integer secondNumber) {
         return firstNumber + secondNumber;
     }
+    
+    /**
+     * Subtracts the second integer from the first integer and returns the result
+     * 
+     * @param firstNumber The integer to subtract from
+     * @param secondNumber The integer to subtract
+     * @return The difference of the two integers (firstNumber - secondNumber)
+     */
+    public static Integer subtractTwoIntegers(Integer firstNumber, Integer secondNumber) {
+        return firstNumber - secondNumber;
+    }
+    
+    /**
+     * Instance method to subtract two integers
+     * 
+     * @param firstNumber The integer to subtract from
+     * @param secondNumber The integer to subtract
+     * @return The difference of the two integers (firstNumber - secondNumber)
+     */
+    public Integer subtract(Integer firstNumber, Integer secondNumber) {
+        return firstNumber - secondNumber;
+    }
 }
